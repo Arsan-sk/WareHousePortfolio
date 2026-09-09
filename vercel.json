@@ -1,7 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "npm install --foreground-scripts",
-  "buildCommand": "npx --yes vite build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

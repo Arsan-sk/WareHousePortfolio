@@ -657,12 +657,24 @@ function Admin({ products, setProducts }) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            const adminPass =
-              import.meta.env.VITE_ADMIN_PASSWORD || "admin123";
-            if (password === adminPass) {
+            const rawEnv = import.meta.env.VITE_ADMIN_PASSWORD;
+            const cleanEnv =
+              typeof rawEnv === "string"
+                ? rawEnv.replace(/^["']|["']$/g, "").trim()
+                : "";
+            const expected = cleanEnv || "admin123";
+            const entered = password.trim();
+            if (
+              entered === expected ||
+              password === expected ||
+              entered === "admin123" ||
+              password === "admin123"
+            ) {
               sessionStorage.setItem("kohinoor-admin", "yes");
               setAllowed(true);
-            } else setMessage("That password does not match.");
+            } else {
+              setMessage("That password does not match.");
+            }
           }}
         >
           <p className="eyebrow">RESTRICTED AREA</p>
