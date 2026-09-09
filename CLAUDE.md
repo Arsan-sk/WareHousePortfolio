@@ -12,5 +12,5 @@ Vite + React digital showroom for Kohinoor Enterprise, Bhiwandi. Discovery-led r
 ## Architecture
 - Vite + React client routes: `/`, `/products`, `/products/:id`, `/admin`.
 - Catalogue data is isolated in `src/data/catalog.js`; UI must stay data-driven.
-- Password comes only from `ADMIN_PASSWORD` in `.env.local`.
+- Password comes only from `VITE_ADMIN_PASSWORD` in `.env.local`.
 - This front-end demo persists admin edits in localStorage. Replace only the storage adapter when introducing a backend.

@@ -1418,7 +1418,7 @@ Use an environment variable.
 
 Example conceptual variable:
 
-ADMIN_PASSWORD=admin123
+VITE_ADMIN_PASSWORD=admin123
 
 The exact variable name can be chosen appropriately.
 
